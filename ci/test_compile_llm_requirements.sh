@@ -22,7 +22,7 @@ for LOCK_TYPE in "${LOCK_TYPES[@]}"; do
     done
 done
 
-bazel run //ci/raydepsets:raydepsets -- build ci/raydepsets/rayllm.depsets.yaml
+./ci/compile_llm_requirements.sh ci/raydepsets/rayllm.depsets.yaml
 
 # Copy files to artifact mount on Buildkite
 for LOCK_TYPE in "${LOCK_TYPES[@]}"; do
